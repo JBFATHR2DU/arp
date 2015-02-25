@@ -1,0 +1,25 @@
+/*²âÊÔ-hÑ¡Ïî
+int
+main()
+{
+	char str[200];
+	u_int32_t hoststart,hostend,hosts[100];
+	int hosts_number=0,i;
+
+	isbigendian();
+	while(1){
+		scanf("%s",str);
+		if(parse_hosts(str,&hoststart,&hostend,hosts,&hosts_number)<0){
+			printf("error!\n");
+			continue;
+		}
+		if(hosts_number){
+			for(i=0;i<hosts_number;i++)
+				printf("%s\n",inet_ntoa(*((struct in_addr *)(hosts+i))));
+			continue;
+		}
+		printf("hoststart=%s,",inet_ntoa(*((struct in_addr *)(&hoststart))));
+		printf("hostend=%s\n",inet_ntoa(*((struct in_addr *)(&hostend))));
+	}
+}
+*/
